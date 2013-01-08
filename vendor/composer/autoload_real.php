@@ -19,9 +19,9 @@ class ComposerAutoloaderInit
             return self::$loader;
         }
 
-        spl_autoload_register(array('ComposerAutoloaderInitbf4d98ccf4ed6e2e49bdfd166d36ccfe', 'loadClassLoader'));
+        spl_autoload_register(array('ComposerAutoloaderInit', 'loadClassLoader'));
         self::$loader = $loader = new \Composer\Autoload\ClassLoader();
-        spl_autoload_unregister(array('ComposerAutoloaderInitbf4d98ccf4ed6e2e49bdfd166d36ccfe', 'loadClassLoader'));
+        spl_autoload_unregister(array('ComposerAutoloaderInit', 'loadClassLoader'));
 
         $vendorDir = dirname(__DIR__);
         $baseDir = dirname($vendorDir);
