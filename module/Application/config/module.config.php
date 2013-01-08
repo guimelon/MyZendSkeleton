@@ -70,7 +70,7 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-            'Application\Controller\Index' => 'Application\Controller\HelloController'
+            'Application\Controller\Hello' => 'Application\Controller\HelloController'
         ),
     ),
     'view_manager' => array(
