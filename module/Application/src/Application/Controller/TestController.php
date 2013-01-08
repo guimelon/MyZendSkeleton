@@ -11,13 +11,14 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+//use ScnSocialAuth\Controller;
 
 class TestController extends AbstractActionController
 {
     public function indexAction()
     {
         
-    	if ($this->zfcUserAuthentication()->hasIdentity()) {
+    	/*if ($this->zfcUserAuthentication()->hasIdentity()) {
     		//get the email of the user
     		echo $this->zfcUserAuthentication()->getIdentity()->getEmail();
     		//get the user_id of the user
@@ -27,9 +28,17 @@ class TestController extends AbstractActionController
     		//get the display name of the user
     		echo $this->zfcUserAuthentication()->getIdentity()->getDisplayname();
     	}
+    	else{
+    			
+    	}
     	
     	return new ViewModel();
         
-        
+        */
+       
+    	if (!$this->zfcUserAuthentication()->hasIdentity()) {
+    		return $this->redirect()->toRoute('zfcuser/login');
+    	}
+    	return new ViewModel();
     }
 }
