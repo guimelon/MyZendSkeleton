@@ -16,6 +16,20 @@ class TestController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+        
+    	if ($this->zfcUserAuthentication()->hasIdentity()) {
+    		//get the email of the user
+    		echo $this->zfcUserAuthentication()->getIdentity()->getEmail();
+    		//get the user_id of the user
+    		echo $this->zfcUserAuthentication()->getIdentity()->getId();
+    		//get the username of the user
+    		echo $this->zfcUserAuthentication()->getIdentity()->getUsername();
+    		//get the display name of the user
+    		echo $this->zfcUserAuthentication()->getIdentity()->getDisplayname();
+    	}
+    	
+    	return new ViewModel();
+        
+        
     }
 }
